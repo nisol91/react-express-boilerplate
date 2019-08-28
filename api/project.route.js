@@ -1,7 +1,7 @@
 const express = require("express");
 const projectRoutes = express.Router();
 
-// Require Business model in our routes module
+// Require Project model in our routes module
 let Project = require("./project.model");
 
 //=============CRUD OPERATIONS=============

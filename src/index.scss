@@ -1,3 +1,5 @@
+@import 'variables';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -20,10 +22,36 @@ code {
 
 .main {
   width: 100%;
-  height: 1000px;
+  height: auto;
+  padding: 10px;
   background: lightgrey;
 }
 
+.contenitore {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.mynavbar {
+  width: 150px;
+  height: 100%;
+  background: rgb(36, 56, 82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .mylink {
+    color: rgb(59, 132, 173);
+    margin-top: 50px;
+
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+
+}
 
 
 /* cdd transition */
@@ -44,4 +72,28 @@ code {
 .fade-exit.fade-exit-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+//transitions part II
+
+.dialog-enter {
+  opacity: 0.01;
+  transform: scale(1.1);
+}
+
+.dialog-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
+}
+
+.dialog-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dialog-exit-active {
+  opacity: 0.01;
+  transform: scale(1.1);
+  transition: all 300ms;
 }

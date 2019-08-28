@@ -8,9 +8,9 @@ let Project = new Schema(
       type: String
     },
     project_date: {
-      type: Date
+      type: String
     },
-    Project_description: {
+    project_description: {
       type: String
     }
   },
