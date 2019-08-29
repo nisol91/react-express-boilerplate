@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 go in api folder:
 
-###`ps ax | grep mongod` e `sudo kill numeroprocesso`
+### `ps ax | grep mongod` e `sudo kill numeroprocesso`
 
 ### `sudo mongod`
 

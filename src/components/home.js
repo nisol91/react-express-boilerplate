@@ -7,10 +7,9 @@ export default class Portfolio extends Component {
     super(props);
 
     this.state = {
-      test: "",
+      test: "Home",
       project: [],
-      projectsVisibility: false,
-      slide: false
+      projectsVisibility: false
     };
   }
   getProjects() {
@@ -24,34 +23,14 @@ export default class Portfolio extends Component {
       });
     //cosi controllo la durata del caricamento
     setTimeout(() => {
-      this.setState({
-        test: "portfolio",
-        projectsVisibility: true,
-        slide: true
-      });
-    }, 1000);
+      this.setState({ projectsVisibility: true });
+    }, 2000);
   }
-  slideIn() {
-    // this.setState({ slide: true });
-  }
-  componentDidMount() {
-    this.getProjects();
-    this.slideIn();
-  }
+  componentDidMount() {}
   render() {
-    //==handling css classes==
-    let className_1 = "portfolioContainer";
-    if (this.state.slide) {
-      className_1 += " slide";
-    }
-    let className_2 = "slider";
-    if (this.state.slide) {
-      className_2 += " slide_2";
-    }
-    //
     return (
-      <div style={{ marginTop: 10 }} className={className_1}>
-        <div className={className_2}></div>
+      <div style={{ marginTop: 10 }}>
+        <div class="rosso"></div>
         <h1>{this.state.test}</h1>
         {this.state.projectsVisibility === false && <Spinner color="primary" />}
         {this.state.projectsVisibility &&
