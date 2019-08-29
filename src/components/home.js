@@ -28,9 +28,13 @@ export default class Portfolio extends Component {
   }
   componentDidMount() {}
   render() {
+    //==handling css classes==
+    let className_1 = "boxPortfolio";
+    if (this.state.slide) {
+      className_1 += " ";
+    }
     return (
-      <div style={{ marginTop: 10 }}>
-        <div class="rosso"></div>
+      <div className={className_1}>
         <h1>{this.state.test}</h1>
         {this.state.projectsVisibility === false && <Spinner color="primary" />}
         {this.state.projectsVisibility &&

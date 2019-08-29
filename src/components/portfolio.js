@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Spinner } from "reactstrap";
-
+import ProgressBar from "react-bootstrap/ProgressBar";
 export default class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,8 @@ export default class Portfolio extends Component {
       test: "",
       project: [],
       projectsVisibility: false,
-      slide: false
+      didMount: false,
+      bar: 0
     };
   }
   getProjects() {
@@ -25,34 +26,52 @@ export default class Portfolio extends Component {
     //cosi controllo la durata del caricamento
     setTimeout(() => {
       this.setState({
-        test: "portfolio",
-        projectsVisibility: true,
-        slide: true
+        test: "Portfolio",
+        projectsVisibility: true
       });
-    }, 1000);
+    }, 3000);
   }
-  slideIn() {
-    // this.setState({ slide: true });
+  animation() {
+    setTimeout(() => {
+      this.setState({
+        didMount: true
+      });
+    }, 0);
+  }
+  progress() {
+    let progresso = setInterval(() => {
+      let val = this.state.bar + 10;
+      console.log(val);
+      this.setState({
+        bar: val
+      });
+      if (this.state.bar >= 100) {
+        console.log("ciao");
+        clearInterval(progresso);
+      }
+    }, 200);
   }
   componentDidMount() {
     this.getProjects();
-    this.slideIn();
+    this.animation();
+    this.progress();
   }
   render() {
     //==handling css classes==
-    let className_1 = "portfolioContainer";
-    if (this.state.slide) {
-      className_1 += " slide";
-    }
-    let className_2 = "slider";
-    if (this.state.slide) {
-      className_2 += " slide_2";
-    }
+    // let className_1 = "boxPortfolio";
+    // if (this.state.slide) {
+    //   className_1 += " ";
+    // }
+    // let className_2 = "";
+    // if (this.state.slide) {
+    //   className_2 += " ";
+    // }
     //
+
     return (
-      <div style={{ marginTop: 10 }} className={className_1}>
-        <div className={className_2}></div>
+      <div className={`fade-in ${this.state.didMount && "visible"}`}>
         <h1>{this.state.test}</h1>
+        <ProgressBar now={this.state.bar} />
         {this.state.projectsVisibility === false && <Spinner color="primary" />}
         {this.state.projectsVisibility &&
           this.state.project.map(object => (
