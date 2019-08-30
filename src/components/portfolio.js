@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Spinner } from "reactstrap";
+import Card from "./card/card";
 import ProgressBar from "react-bootstrap/ProgressBar";
+
 export default class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +11,8 @@ export default class Portfolio extends Component {
       test: "",
       project: [],
       projectsVisibility: false,
-      didMount: false,
+      barDidMount: false,
+      contentDidMount: false,
       bar: 0
     };
   }
@@ -26,7 +28,6 @@ export default class Portfolio extends Component {
     //cosi controllo la durata del caricamento
     setTimeout(() => {
       this.setState({
-        test: "Portfolio",
         projectsVisibility: true
       });
     }, 3000);
@@ -34,7 +35,7 @@ export default class Portfolio extends Component {
   animation() {
     setTimeout(() => {
       this.setState({
-        didMount: true
+        barDidMount: true
       });
     }, 0);
   }
@@ -46,7 +47,6 @@ export default class Portfolio extends Component {
         bar: val
       });
       if (this.state.bar >= 100) {
-        console.log("ciao");
         clearInterval(progresso);
       }
     }, 200);
@@ -69,18 +69,27 @@ export default class Portfolio extends Component {
     //
 
     return (
-      <div className={`fade-in ${this.state.didMount && "visible"}`}>
-        <h1>{this.state.test}</h1>
-        <ProgressBar now={this.state.bar} />
-        {this.state.projectsVisibility === false && <Spinner color="primary" />}
-        {this.state.projectsVisibility &&
-          this.state.project.map(object => (
-            <div key={object._id}>
-              <h1>{object.project_name}</h1>
+      <div className={`fade-in ${this.state.barDidMount && "visible"}`}>
+        {this.state.projectsVisibility === false && (
+          <ProgressBar now={this.state.bar} />
+        )}
+        <div
+          className={`boxPortfolio fade-in ${this.state.barDidMount &&
+            "visible"}`}
+        >
+          {this.state.project.map(object => (
+            <div
+              key={object._id}
+              className={`fade-in ${this.state.projectsVisibility &&
+                "visible"}`}
+            >
+              {/* <h1>{object.project_name}</h1>
               <h1>{object.project_date}</h1>
-              <h1>{object.project_description}</h1>
+              <h1>{object.project_description}</h1> */}
+              <Card datiPerCard={object} />
             </div>
           ))}
+        </div>
       </div>
     );
   }

@@ -1,66 +1,62 @@
 /* css transition */
 
-
 //transition I
 
 .fade-enter {
-	opacity: 0.01;
-
+  opacity: 0.01;
 }
 
 .fade-enter.fade-enter-active {
-	opacity: 1;
-	transition: opacity 800ms linear;
-	// transform: translateX(200px);
-	// transition: all 1.5s linear;
+  opacity: 1;
+  transition: opacity 800ms linear;
+  // transform: translateX(200px);
+  // transition: all 1.5s linear;
 }
 
 .fade-exit {
-	opacity: 1;
-
+  opacity: 1;
 }
 
 .fade-exit.fade-exit-active {
-	opacity: 0;
+  opacity: 0;
 
-	// transition: opacity 1000ms ease-in;
-	// transition-duration: 4s;
-	// transform: scale(0.5);
-	// transition: all 1.5s linear;
+  // transition: opacity 1000ms ease-in;
+  // transition-duration: 4s;
+  // transform: scale(0.5);
+  // transition: all 1.5s linear;
 }
 
 //transitions part II
 
 .dialog-enter {
-	opacity: 0.01;
-	transform: scale(1.1);
+  opacity: 0.01;
+  transform: scale(1.1);
 }
 
 .dialog-enter-active {
-	opacity: 1;
-	transform: scale(1);
-	transition: all 300ms;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
 }
 
 .dialog-exit {
-	opacity: 1;
-	transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .dialog-exit-active {
-	opacity: 0.01;
-	transform: scale(1.1);
-	transition: all 300ms;
+  opacity: 0.01;
+  transform: scale(1.1);
+  transition: all 300ms;
 }
 
 //transitions part III
 
-
 .fade-in {
-	opacity: 0;
+  opacity: 0;
 }
 
 .fade-in.visible {
-	transition: opacity 1s ease-in;
-	opacity: 1;
+  transition: opacity 1s ease-in;
+  opacity: 1;
 }
