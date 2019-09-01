@@ -1,17 +1,36 @@
 @import 'variables';
+@import 'transitions';
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: 'Lato',
     sans-serif;
+
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  text-decoration: none !important;
+  color: $link-color !important;
+
+  &:hover {
+    text-decoration: none;
+    color: $link-color !important;
+
+  }
 }
 
 .footer {
@@ -26,203 +45,237 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background: $page-background-color;
+
 }
 
 .main {
   width: 100%;
   height: 100%;
   padding: 10px;
-  background: lightgrey;
+  background: $page-background-color;
+
 }
 
-.rosso {
-  width: 50px;
-  height: 50px;
-  background: rgb(133, 79, 79);
+//home=========================
+.boxHome {
+  padding: 100px;
+
+  .home1 {
+    font-size: 70px;
+    font-weight: bold;
+  }
+
+  .home2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
 }
 
-.portfolioContainer {
-  // display: none;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-800px);
+
+//portfolio==========================
+.boxPortfolio {
+  width: 95%;
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+
+  .works {
+    width: 60%;
+    display: flex;
+  }
+
+  .textPortfolio {
+    width: 40%;
+
+    .port1 {
+      font-size: 70px;
+      font-weight: bold;
+    }
+
+    .port2 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+  }
 }
 
-.slide {
-  // display: block;
-  transform: translateX(0px);
-  transition: all .2s linear;
+.progress {
+  height: 5px !important;
+  background: $nav-background-color !important;
 }
 
-.slide_2 {
-  transform: translateX(4000px);
-  transition: all .2s linear;
+.progress-bar {
+  background-color: $link-color !important;
 }
 
-.slider {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background: black;
-  z-index: 1;
-  position: fixed;
-  right: 4000px;
-}
 
+
+//navbar===============
 .mynavbar {
-  width: 150px;
+  width: 120px;
   height: 100%;
-  background: rgb(36, 56, 82);
+  background: $nav-background-color;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+
+  .homeIcon {
+    color: $link-color;
+    opacity: 0;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    z-index: 1;
+    transition: opacity .4s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portIcon {
+    left: 10px;
+  }
+
+  .aboutIcon {
+    left: 3px;
+    top: -5px;
+  }
+
+  .contIcon {
+    left: 18px;
+    top: -5px;
+
+  }
+
+  .userIcon {
+    left: 15px;
+    top: -5px;
+
+  }
+
+  .skillsIcon {
+    left: -2px;
+    top: -5px;
+
+  }
+
+  .myLogo {
+    max-width: 100%;
+    opacity: .2;
+    transition: opacity .4s linear;
+
+    &:hover {
+      opacity: .5;
+      transition: opacity .4s linear;
+
+    }
+  }
 
   .mylink {
-    color: rgb(59, 132, 173);
+    color: $link-color;
     margin-top: 50px;
+    position: relative;
+
+
+    .linkFont {
+      font-size: 15px;
+      transition: opacity .4s ease-in;
+      font-weight: 800;
+
+    }
 
     &:hover {
       color: $link-hover-color;
       text-decoration: none;
+
+      .linkFont {
+        transition: opacity .4s ease-in;
+        opacity: 0;
+      }
+
+      .homeIcon {
+        opacity: 1;
+        transition: opacity .4s ease-in;
+      }
+
+
     }
   }
 
 }
 
 
-/* css transition */
+// close button
+// COLORS
+$softorange: #F4A259;
+$tomatored: #F25C66;
+$mediumblu: #1E272D;
 
-.fade-enter {
-  opacity: 0.01;
 
+
+
+.close-container {
+  position: relative;
+  margin: 20px 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 800ms linear;
-  // transform: translateX(200px);
-  // transition: all 1.5s linear;
+.leftright {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: $link-color;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
 }
 
-.fade-exit {
-  opacity: 1;
-
+.rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: $link-hover-color;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
 }
 
-.fade-exit.fade-exit-active {
+label {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: .6em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all .3s ease-in;
   opacity: 0;
-
-  // transition: opacity 1000ms ease-in;
-  // transition-duration: 4s;
-  // transform: scale(0.5);
-  // transition: all 1.5s linear;
 }
 
-//transitions part II
-
-.dialog-enter {
-  opacity: 0.01;
-  transform: scale(1.1);
+.close {
+  margin: 5px 0 0 5px;
+  position: absolute;
 }
 
-.dialog-enter-active {
+.close-container:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: $link-hover-color;
+}
+
+.close-container:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: $page-background-color;
+}
+
+.close-container:hover label {
   opacity: 1;
-  transform: scale(1);
-  transition: all 300ms;
-}
-
-.dialog-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.dialog-exit-active {
-  opacity: 0.01;
-  transform: scale(1.1);
-  transition: all 300ms;
-}
-
-//transitions part III
-
-
-.background-enter {
-  transform: translate(100%);
-}
-
-.background-enter.background-enter-active {
-  transform: translate(0%);
-  transition: transform 500ms ease-in-out;
-}
-
-.background-leave {
-  transform: translate(0);
-}
-
-.background-leave.background-leave-active {
-  transform: translate(-1000px);
-  transition: transform 50ms ease-in-out;
-}
-
-// transitions part IV
-.page {
-  height: 100vh;
-  padding: calc(15% + 1.5em) 5% 5%;
-  overflow-y: auto;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-  transition: transform 1s ease-in-out;
-}
-
-.page-enter {
-  transform: translate(-100%, 0);
-}
-
-.page-enter-active {
-  transform: translate(0, 0);
-}
-
-.page-exit {
-  transform: translate(-100%, 0);
-}
-
-//transitions part V
-
-
-//old page exiting, hides it underneath (bottom) 
-.pageSlider-exit>.page {
-  z-index: 1;
-}
-
-//new page entering, show it on top
-.pageSlider-enter>.page {
-  z-index: 10;
-}
-
-//LEFT transition transform 100% to the right
-.pageSlider-enter.left>.page {
-  transform: translate3d(100%, 0, 0);
-}
-
-//RIGHT transition transform -100% to the left
-.pageSlider-enter.right>.page {
-  transform: translate3d(-100%, 0, 0);
-}
-
-//old exit left direction
-.pageSlider-exit.left>.page {
-  transform: translate3d(-100%, 0, 0);
-}
-
-//old exit right direction 
-.pageSlider-exit.right>.page {
-  transform: translate3d(100%, 0, 0);
-}
-
-//Enter is active (Page has finished transitioning) make it settle down 
-.pageSlider-enter.pageSlider-enter-active>.page {
-  transform: translate3d(0, 0, 0);
-  //Apply all transitions 
-  transition: all 800ms ease-in-out;
 }

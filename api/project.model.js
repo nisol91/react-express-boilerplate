@@ -12,6 +12,9 @@ let Project = new Schema(
     },
     project_description: {
       type: String
+    },
+    project_img: {
+      type: String
     }
   },
   {
