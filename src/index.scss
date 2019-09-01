@@ -1,19 +1,36 @@
 @import 'variables';
 @import 'transitions';
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: 'Lato',
     sans-serif;
+
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  text-decoration: none !important;
+  color: $link-color !important;
+
+  &:hover {
+    text-decoration: none;
+    color: $link-color !important;
+
+  }
 }
 
 .footer {
@@ -28,45 +45,237 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background: $page-background-color;
+
 }
 
 .main {
   width: 100%;
   height: 100%;
   padding: 10px;
-  background: rgb(56, 74, 104);
+  background: $page-background-color;
 
 }
 
+//home=========================
+.boxHome {
+  padding: 100px;
+
+  .home1 {
+    font-size: 70px;
+    font-weight: bold;
+  }
+
+  .home2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+}
+
+
+//portfolio==========================
 .boxPortfolio {
   width: 95%;
-  height: 100%;
+  height: auto;
   margin: auto;
   margin-top: 50px;
   display: flex;
 
+  .works {
+    width: 60%;
+    display: flex;
+  }
+
+  .textPortfolio {
+    width: 40%;
+
+    .port1 {
+      font-size: 70px;
+      font-weight: bold;
+    }
+
+    .port2 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+  }
+}
+
+.progress {
+  height: 5px !important;
+  background: $nav-background-color !important;
+}
+
+.progress-bar {
+  background-color: $link-color !important;
 }
 
 
 
-
-
+//navbar===============
 .mynavbar {
-  width: 150px;
+  width: 120px;
   height: 100%;
-  background: rgb(36, 56, 82);
+  background: $nav-background-color;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+
+  .homeIcon {
+    color: $link-color;
+    opacity: 0;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    z-index: 1;
+    transition: opacity .4s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portIcon {
+    left: 10px;
+  }
+
+  .aboutIcon {
+    left: 3px;
+    top: -5px;
+  }
+
+  .contIcon {
+    left: 18px;
+    top: -5px;
+
+  }
+
+  .userIcon {
+    left: 15px;
+    top: -5px;
+
+  }
+
+  .skillsIcon {
+    left: -2px;
+    top: -5px;
+
+  }
+
+  .myLogo {
+    max-width: 100%;
+    opacity: .2;
+    transition: opacity .4s linear;
+
+    &:hover {
+      opacity: .5;
+      transition: opacity .4s linear;
+
+    }
+  }
 
   .mylink {
-    color: rgb(59, 132, 173);
+    color: $link-color;
     margin-top: 50px;
+    position: relative;
+
+
+    .linkFont {
+      font-size: 15px;
+      transition: opacity .4s ease-in;
+      font-weight: 800;
+
+    }
 
     &:hover {
       color: $link-hover-color;
       text-decoration: none;
+
+      .linkFont {
+        transition: opacity .4s ease-in;
+        opacity: 0;
+      }
+
+      .homeIcon {
+        opacity: 1;
+        transition: opacity .4s ease-in;
+      }
+
+
     }
   }
 
+}
+
+
+// close button
+// COLORS
+$softorange: #F4A259;
+$tomatored: #F25C66;
+$mediumblu: #1E272D;
+
+
+
+
+.close-container {
+  position: relative;
+  margin: 20px 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.leftright {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: $link-color;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: $link-hover-color;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+label {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: .6em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all .3s ease-in;
+  opacity: 0;
+}
+
+.close {
+  margin: 5px 0 0 5px;
+  position: absolute;
+}
+
+.close-container:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: $link-hover-color;
+}
+
+.close-container:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: $page-background-color;
+}
+
+.close-container:hover label {
+  opacity: 1;
 }

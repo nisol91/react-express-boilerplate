@@ -77,18 +77,27 @@ export default class Portfolio extends Component {
           className={`boxPortfolio fade-in ${this.state.barDidMount &&
             "visible"}`}
         >
-          {this.state.project.map(object => (
-            <div
-              key={object._id}
-              className={`fade-in ${this.state.projectsVisibility &&
-                "visible"}`}
-            >
-              {/* <h1>{object.project_name}</h1>
-              <h1>{object.project_date}</h1>
-              <h1>{object.project_description}</h1> */}
-              <Card datiPerCard={object} />
-            </div>
-          ))}
+          <div
+            className={`works fade-in ${this.state.projectsVisibility &&
+              "visible"}`}
+          >
+            {this.state.project.map(object => (
+              <div
+                key={object._id}
+                className={`fade-in ${this.state.projectsVisibility &&
+                  "visible"}`}
+              >
+                <Card datiPerCard={object} />
+              </div>
+            ))}
+          </div>
+          <div
+            className={`textPortfolio slide-in-tr ${this.state
+              .projectsVisibility && "visible"}`}
+          >
+            <h1 className="port1">This is our work</h1>
+            <h1 className="port2">Check it out</h1>
+          </div>
         </div>
       </div>
     );
