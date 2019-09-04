@@ -8,13 +8,17 @@ In the project directory, you can run:
 
 go in api folder:
 
-### `ps ax | grep mongod` e `sudo kill numeroprocesso`
-
 ### `sudo mongod`
 
-### `killall -s KILL node`
+se non va mongo
+
+### `ps ax | grep mongod` e `sudo kill numeroprocesso`
 
 ### `nodemon server`
+
+se non va server
+
+### `killall -s KILL node` oppure `fuser -n tcp 3000` e `sudo kill numeroprocesso`
 
 then go in api folder: sudo mongod nodemon server
 

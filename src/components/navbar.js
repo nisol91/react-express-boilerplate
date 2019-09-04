@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import logo from "../img/logo_2.png";
 import home from "../img/chinese-house.svg";
 import portfolio from "../img/view.svg";
@@ -16,11 +19,13 @@ export default class Navbar extends Component {
       navSlide: false
     };
     this.closeNav = this.closeNav.bind(this);
+    this.openNav = this.openNav.bind(this);
   }
   closeNav() {
-    console.log(this.navSlide);
-
     this.setState({ navSlide: true });
+  }
+  openNav() {
+    this.setState({ navSlide: false });
   }
   componentDidMount() {}
   render() {
@@ -29,36 +34,77 @@ export default class Navbar extends Component {
     if (this.state.navSlide) {
       className_1 += " slideLeft";
     }
+    if (!this.state.navSlide) {
+      className_1 += " slideRight";
+    }
+    let className_2 = "linkFont";
+    if (this.state.navSlide) {
+      className_2 += " hidden";
+    }
     return (
       <div className={className_1}>
-        <div className="close-container" onClick={this.closeNav}>
+        <Link to={"/"} className="mylink">
+          <img
+            className={`myLogo ${this.state.navSlide && "hidden"}`}
+            src={logo}
+            alt=""
+          />
+        </Link>
+        <div
+          className={`close-container ${this.state.navSlide && "hidden"}`}
+          onClick={this.closeNav}
+        >
           <div className="leftright"></div>
           <div className="rightleft"></div>
         </div>
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          className={`arrow_right ${this.state.navSlide && "arrow_right_show"}`}
+          onClick={this.openNav}
+        />
         <Link to={"/"} className="mylink">
-          <img className="myLogo" src={logo} alt="" />
-        </Link>
-        <Link to={"/"} className="mylink">
-          <h1 className="linkFont">Home</h1>
-          <img className="homeIcon" src={home} alt="" />
-
-          {/* <FontAwesomeIcon icon={faHome} className="homeIcon" /> */}
+          <h1 className={className_2}>Home</h1>
+          <img
+            className={`homeIcon ${this.state.navSlide && "show_icon"}`}
+            src={home}
+            alt=""
+          />
         </Link>
         <Link to={"/about"} className="mylink">
-          <h1 className="linkFont">About</h1>
-          <img className="homeIcon aboutIcon" src={about} alt="" />
+          <h1 className={className_2}>About</h1>
+          <img
+            className={`homeIcon aboutIcon ${this.state.navSlide &&
+              "show_icon"}`}
+            src={about}
+            alt=""
+          />
         </Link>
         <Link to={"/skills"} className="mylink">
-          <h1 className="linkFont">Skills</h1>
-          <img className="homeIcon skillsIcon" src={skills} alt="" />
+          <h1 className={className_2}>Skills</h1>
+          <img
+            className={`homeIcon skillsIcon ${this.state.navSlide &&
+              "show_icon"}`}
+            src={skills}
+            alt=""
+          />
         </Link>
         <Link to={"/portfolio"} className="mylink">
-          <h1 className="linkFont">Portfolio</h1>
-          <img className="homeIcon portIcon" src={portfolio} alt="" />
+          <h1 className={className_2}>Portfolio</h1>
+          <img
+            className={`homeIcon portIcon ${this.state.navSlide &&
+              "show_icon"}`}
+            src={portfolio}
+            alt=""
+          />
         </Link>
         <Link to={"/contact-me"} className="mylink">
-          <h1 className="linkFont">Contact Me</h1>
-          <img className="homeIcon contIcon" src={contact} alt="" />
+          <h1 className={className_2}>Contact Me</h1>
+          <img
+            className={`homeIcon contIcon ${this.state.navSlide &&
+              "show_icon"}`}
+            src={contact}
+            alt=""
+          />
         </Link>
       </div>
     );
