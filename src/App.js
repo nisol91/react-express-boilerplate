@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Portfolio from "./components/portfolio";
 import Home from "./components/home";
-import Contact from "./components/contact";
+import Contact from "./components/contact/contact";
 import About from "./components/about";
 import Skills from "./components/skills";
 import Navbar from "./components/navbar";
