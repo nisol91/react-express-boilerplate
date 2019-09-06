@@ -12,9 +12,24 @@
 
 }
 
+.charger_container {
+	margin-top: 300px !important;
+	height: 100px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: auto;
+}
+
 .text-primary {
 	color: $link-color !important;
-	margin: 200px 50%;
+}
+
+.spinner-border {
+	border: 1.25em solid currentColor !important;
+	height: 20rem !important;
 }
 
 .showed {

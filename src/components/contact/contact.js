@@ -46,7 +46,7 @@ export default class Contact extends Component {
         formVisibility: true,
         visible: true
       });
-    }, 2000);
+    }, 1000);
   };
   onDismiss() {
     this.setState({ visible: false });
@@ -55,10 +55,13 @@ export default class Contact extends Component {
     return (
       <div style={{ marginTop: 10 }}>
         {this.state.formVisibility === false && (
-          <Spinner
-            color="primary"
-            className={`App ${!this.state.formVisibility && "showed"}`}
-          />
+          <div className="charger_container">
+            <Spinner
+              color="primary"
+              className={`App ${!this.state.formVisibility && "showed"}`}
+            />
+            <h1>sending...</h1>
+          </div>
         )}
         <div className={`App ${this.state.formVisibility && "showed"}`}>
           <div>
