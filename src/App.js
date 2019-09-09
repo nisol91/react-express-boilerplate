@@ -5,7 +5,7 @@ import Portfolio from "./components/portfolio";
 import Home from "./components/home";
 import Contact from "./components/contact/contact";
 import About from "./components/about";
-import Skills from "./components/skills";
+import Skills from "./components/skills/skills";
 import Navbar from "./components/navbar";
 
 class App extends Component {

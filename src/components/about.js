@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Spinner } from "reactstrap";
+import Triangle from "./triangle";
 
 export default class About extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ export default class About extends Component {
               <h1>{object.project_description}</h1>
             </div>
           ))}
+        <Triangle></Triangle>
       </div>
     );
   }

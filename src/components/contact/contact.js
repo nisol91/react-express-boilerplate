@@ -16,7 +16,8 @@ export default class Contact extends Component {
       mailSent: false,
       error: null,
       formVisibility: true,
-      visible: false
+      visible: false,
+      formShowEnter: true
     };
   }
 
@@ -58,7 +59,8 @@ export default class Contact extends Component {
           <div className="charger_container">
             <Spinner
               color="primary"
-              className={`App ${!this.state.formVisibility && "showed"}`}
+              className={`App contactSpinner ${!this.state.formVisibility &&
+                "showed"}`}
             />
             <h1>sending...</h1>
           </div>
@@ -76,7 +78,9 @@ export default class Contact extends Component {
             )}
           </div>
           <p>Contact Me</p>
-          <div>
+          <div
+            className={`bounce-in-top ${this.state.formShowEnter && "visible"}`}
+          >
             <form>
               <label>First Name</label>
               <input

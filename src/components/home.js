@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Sphere from "./sphere";
 
 export default class Portfolio extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ export default class Portfolio extends Component {
       <div className="boxHome">
         <h1 className="home1 text-flicker-in-glow">Hey</h1>
         <h1 className="home2 tracking-in-expand">We are Downhill Studios</h1>
+        <Sphere></Sphere>
       </div>
     );
   }

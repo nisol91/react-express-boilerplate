@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import * as THREE from "three";
-import OrbitControls from "three-orbitcontrols";
-
-class Sphere extends Component {
+class Cube extends Component {
   componentDidMount() {
-    const canvas = document.querySelector("#s");
+    const canvas = document.querySelector("#c");
     const renderer = new THREE.WebGLRenderer({ canvas });
 
     const fov = 75;
@@ -14,33 +12,31 @@ class Sphere extends Component {
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     camera.position.z = 2;
 
-    //orbit control mouse
-    const controls = new OrbitControls(camera, canvas);
-    controls.target.set(0, 0, 0);
-    controls.update();
-
     const scene = new THREE.Scene();
     scene.background = new THREE.Color("#536872");
 
     {
-      const color = "#6e7f80";
+      const color = "#536872";
       const intensity = 1;
       const light = new THREE.DirectionalLight(color, intensity);
       light.position.set(-1, 2, 4);
       scene.add(light);
     }
-    const radius = 1;
-    const geometry = new THREE.IcosahedronBufferGeometry(radius);
+
+    const boxWidth = 1;
+    const boxHeight = 1;
+    const boxDepth = 1;
+    const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
     const material = new THREE.MeshStandardMaterial({
       color: "#00aeff",
       transparent: false,
       opacity: 0.2,
-      metalness: 0.1
+      metalness: 0.5
     }); // greenish blue
 
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
 
     //responsiveness
     function resizeRendererToDisplaySize(renderer) {
@@ -64,8 +60,8 @@ class Sphere extends Component {
         camera.updateProjectionMatrix();
       }
 
-      sphere.rotation.x = time;
-      sphere.rotation.y = time;
+      cube.rotation.x = time;
+      cube.rotation.y = time;
 
       renderer.render(scene, camera);
 
@@ -75,7 +71,7 @@ class Sphere extends Component {
   }
 
   render() {
-    return <canvas id="s"></canvas>;
+    return <canvas id="c"></canvas>;
   }
 }
-export default Sphere;
+export default Cube;
