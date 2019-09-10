@@ -3,6 +3,10 @@ import * as THREE from "three";
 import OrbitControls from "three-orbitcontrols";
 
 class Sphere extends Component {
+  changeColor() {
+    let color = "#00aeff";
+    return color;
+  }
   componentDidMount() {
     const canvas = document.querySelector("#s");
     const renderer = new THREE.WebGLRenderer({ canvas });
@@ -33,7 +37,7 @@ class Sphere extends Component {
     const geometry = new THREE.IcosahedronBufferGeometry(radius);
 
     const material = new THREE.MeshStandardMaterial({
-      color: "#00aeff",
+      color: this.changeColor(),
       transparent: false,
       opacity: 0.2,
       metalness: 0.1

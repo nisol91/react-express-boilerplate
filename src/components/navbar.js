@@ -16,16 +16,25 @@ export default class Navbar extends Component {
     super(props);
 
     this.state = {
-      navSlide: false
+      navSlide: false,
+      showOverlay: false
     };
     this.closeNav = this.closeNav.bind(this);
     this.openNav = this.openNav.bind(this);
+    this.showOverlay = this.showOverlay.bind(this);
+    this.hiddenOverlay = this.hiddenOverlay.bind(this);
   }
   closeNav() {
     this.setState({ navSlide: true });
   }
   openNav() {
     this.setState({ navSlide: false });
+  }
+  showOverlay() {
+    this.setState({ showOverlay: true });
+  }
+  hiddenOverlay() {
+    this.setState({ showOverlay: false });
   }
   componentDidMount() {}
   render() {
@@ -41,6 +50,12 @@ export default class Navbar extends Component {
     if (this.state.navSlide) {
       className_2 += " hidden";
     }
+    let className_3 = "overlay1";
+    if (this.state.showOverlay) {
+      className_3 += " overlay1Visible";
+    } else if (this.state.hiddenOverlay) {
+      className_3 = "overlay1";
+    }
     return (
       <div className={className_1}>
         <Link to={"/"} className="mylink">
@@ -53,10 +68,13 @@ export default class Navbar extends Component {
         <div
           className={`close-container ${this.state.navSlide && "hidden"}`}
           onClick={this.closeNav}
+          onMouseEnter={this.showOverlay}
+          onMouseLeave={this.hiddenOverlay}
         >
           <div className="leftright"></div>
           <div className="rightleft"></div>
         </div>
+        <div className={className_3}>Try me!</div>
         <FontAwesomeIcon
           icon={faArrowRight}
           className={`arrow_right ${this.state.navSlide && "arrow_right_show"}`}

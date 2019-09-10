@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Spinner } from "reactstrap";
 import Triangle from "./triangle";
 
 export default class About extends Component {
@@ -8,40 +6,24 @@ export default class About extends Component {
     super(props);
 
     this.state = {
-      test: "About",
-      project: [],
-      projectsVisibility: false
+      cubeVisibility: false
     };
   }
-  getProjects() {
-    axios
-      .get("http://localhost:4040/project")
-      .then(response => {
-        this.setState({ project: response.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-    //cosi controllo la durata del caricamento
+
+  //cosi controllo la durata del caricamento
+
+  componentDidMount() {
     setTimeout(() => {
-      this.setState({ projectsVisibility: true });
-    }, 2000);
+      this.setState({ cubeVisibility: true });
+    }, 1500);
   }
-  componentDidMount() {}
   render() {
     return (
       <div style={{ marginTop: 10 }}>
-        <h1>{this.state.test}</h1>
-        {this.state.projectsVisibility === false && <Spinner color="primary" />}
-        {this.state.projectsVisibility &&
-          this.state.project.map(object => (
-            <div key={object._id}>
-              <h1>{object.project_name}</h1>
-              <h1>{object.project_date}</h1>
-              <h1>{object.project_description}</h1>
-            </div>
-          ))}
-        <Triangle></Triangle>
+        about
+        <div className={`fade-in ${this.state.cubeVisibility && "visible"}`}>
+          <Triangle></Triangle>
+        </div>
       </div>
     );
   }

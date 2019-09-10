@@ -68,6 +68,12 @@ a {
   }
 }
 
+.Toastify__toast--default {
+  background: $nav-background-color !important;
+  color: $link-color !important;
+
+}
+
 
 
 //portfolio==========================
@@ -120,6 +126,21 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  .overlay1 {
+    opacity: 0;
+    transition: 1s;
+    background: black;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .overlay1Visible {
+    opacity: 0.4;
+    transition: 1s;
+  }
 
   .homeIcon {
     color: $link-color;
@@ -241,6 +262,7 @@ $mediumblu: #1e272d;
   width: 50px;
   height: 50px;
   cursor: pointer;
+
 }
 
 .leftright {
@@ -295,7 +317,7 @@ label {
 }
 
 //===========THREE JS=====
-
+//contenitori
 #c {
   width: 700px;
   height: 700px;

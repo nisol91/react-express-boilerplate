@@ -2,8 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Spinner, Alert } from "reactstrap";
 import "./contact.scss";
+import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 
 const API_PATH = "http://localhost:4040/form/add";
+const Map = ReactMapboxGl({
+  accessToken:
+    "pk.eyJ1Ijoibmlzb2w5MSIsImEiOiJjazBjaWRvbTIwMWpmM2hvMDhlYWhhZGV0In0.wyRaVw6FXdw6g3wp3t9FNQ"
+});
 
 export default class Contact extends Component {
   constructor(props) {
@@ -17,7 +22,8 @@ export default class Contact extends Component {
       error: null,
       formVisibility: true,
       visible: false,
-      formShowEnter: true
+      formShowEnter: true,
+      mapVisibility: true
     };
   }
 
@@ -34,7 +40,8 @@ export default class Contact extends Component {
           name: "",
           email: "",
           message: "",
-          formVisibility: false
+          formVisibility: false,
+          mapVisibility: false
         });
 
         this.onDismiss = this.onDismiss.bind(this);
@@ -45,7 +52,8 @@ export default class Contact extends Component {
       this.setState({
         mailSent: true,
         formVisibility: true,
-        visible: true
+        visible: true,
+        mapVisibility: true
       });
     }, 1000);
   };
@@ -77,9 +85,11 @@ export default class Contact extends Component {
               </Alert>
             )}
           </div>
-          <p>Contact Me</p>
+          <h1 className="contact2 tracking-in-expand">Contact Us</h1>
+
           <div
-            className={`bounce-in-top ${this.state.formShowEnter && "visible"}`}
+            className={`bounce-in-top  ${this.state.formShowEnter &&
+              "visible"}`}
           >
             <form>
               <label>First Name</label>
@@ -118,6 +128,29 @@ export default class Contact extends Component {
             </form>
           </div>
         </div>
+        {this.state.mapVisibility === true && (
+          <Map
+            // eslint-disable-next-line
+            style="mapbox://styles/nisol91/ck0cimiej4lt91cljcimh64p5"
+            containerStyle={{
+              height: "400px",
+              width: "85%",
+              margin: "30px auto"
+            }}
+            className={`bounce-in-top  ${this.state.formShowEnter &&
+              "visible"}`}
+            center={[10.3, 44.8]}
+          >
+            <Layer
+              type="symbol"
+              id="marker"
+              layout={{ "icon-image": "marker-15" }}
+            >
+              <Feature coordinates={[44.481747846041145, 16.3233379650232]} />
+            </Layer>
+          </Map>
+        )}
+        ;
       </div>
     );
   }
