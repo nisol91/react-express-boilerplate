@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Triangle from "../triangle";
+import "./about.scss";
 
 export default class About extends Component {
   constructor(props) {
@@ -20,8 +21,8 @@ export default class About extends Component {
   render() {
     return (
       <div style={{ marginTop: 10 }}>
-        <div className="skillssx">
-          <h1 className="about1 text-flicker-in-glow">The aboutet</h1>
+        <div className="aboutcontainer">
+          <h1 className="about1 text-flicker-in-glow">About the studio</h1>
           <h1 className="about2 tracking-in-expand">good at:</h1>
           <h1 className="about3 swing-in-top-fwd">JavaScript, Html, Css</h1>
           <h1 className="about2 tracking-in-expand">the stack:</h1>
