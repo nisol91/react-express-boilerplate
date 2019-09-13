@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
 
 import logo from "../img/logo_2.png";
 import home from "../img/chinese-house.svg";
@@ -101,7 +106,7 @@ export default class Navbar extends Component {
               "arrow_right_show"}`}
             onClick={this.openNav}
           />
-          <Link to={"/"} className="mylink">
+          <Link to={"/"} className="mylink" onClick={this.showNav}>
             <h1 className={className_2}>Home</h1>
             <img
               className={`homeIcon ${this.state.navSlide && "show_icon"}`}
@@ -109,7 +114,7 @@ export default class Navbar extends Component {
               alt=""
             />
           </Link>
-          <Link to={"/about"} className="mylink">
+          <Link to={"/about"} className="mylink" onClick={this.showNav}>
             <h1 className={className_2}>About</h1>
             <img
               className={`homeIcon aboutIcon ${this.state.navSlide &&
@@ -118,7 +123,7 @@ export default class Navbar extends Component {
               alt=""
             />
           </Link>
-          <Link to={"/skills"} className="mylink">
+          <Link to={"/skills"} className="mylink" onClick={this.showNav}>
             <h1 className={className_2}>Skills</h1>
             <img
               className={`homeIcon skillsIcon ${this.state.navSlide &&
@@ -127,7 +132,7 @@ export default class Navbar extends Component {
               alt=""
             />
           </Link>
-          <Link to={"/portfolio"} className="mylink">
+          <Link to={"/portfolio"} className="mylink" onClick={this.showNav}>
             <h1 className={className_2}>Portfolio</h1>
             <img
               className={`homeIcon portIcon ${this.state.navSlide &&
@@ -136,7 +141,7 @@ export default class Navbar extends Component {
               alt=""
             />
           </Link>
-          <Link to={"/contact-me"} className="mylink">
+          <Link to={"/contact-me"} className="mylink" onClick={this.showNav}>
             <h1 className={className_2}>Contact Me</h1>
             <img
               className={`homeIcon contIcon ${this.state.navSlide &&
@@ -145,6 +150,21 @@ export default class Navbar extends Component {
               alt=""
             />
           </Link>
+          <div className={`socialIcons ${this.state.navSlide && "hidden"}`}>
+            <a href="/">
+              <FontAwesomeIcon icon={faFacebook} className="mysocialicon" />
+            </a>
+            <a href="/">
+              <FontAwesomeIcon icon={faInstagram} className="mysocialicon" />
+            </a>
+            <a href="/">
+              <FontAwesomeIcon icon={faTwitter} className="mysocialicon" />
+            </a>
+          </div>
+          <div className={`lang ${this.state.navSlide && "hidden"}`}>
+            {/* <h1 className="langSelect">IT</h1> */}
+            <h1 className="langSelect">EN</h1>
+          </div>
         </div>
       </div>
     );

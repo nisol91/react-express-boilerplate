@@ -77,6 +77,13 @@ export default class Portfolio extends Component {
             "visible"}`}
         >
           <div
+            className={`textPortfolio slide-in-tr ${this.state
+              .projectsVisibility && "visible"}`}
+          >
+            <h1 className="port1">This is our work</h1>
+            <h1 className="port2">Check it out</h1>
+          </div>
+          <div
             className={`works fade-in ${this.state.projectsVisibility &&
               "visible"}`}
           >
@@ -89,13 +96,6 @@ export default class Portfolio extends Component {
                 <Card datiPerCard={object} />
               </div>
             ))}
-          </div>
-          <div
-            className={`textPortfolio slide-in-tr ${this.state
-              .projectsVisibility && "visible"}`}
-          >
-            <h1 className="port1">This is our work</h1>
-            <h1 className="port2">Check it out</h1>
           </div>
         </div>
       </div>
