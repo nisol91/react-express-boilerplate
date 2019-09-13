@@ -60,6 +60,7 @@ export default class Contact extends Component {
   onDismiss() {
     this.setState({ visible: false });
   }
+  componentDidMount() {}
   render() {
     return (
       <div style={{ marginTop: 10 }}>

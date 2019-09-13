@@ -42,7 +42,6 @@ export default class Portfolio extends Component {
   progress() {
     let progresso = setInterval(() => {
       let val = this.state.bar + 10;
-      console.log(val);
       this.setState({
         bar: val
       });

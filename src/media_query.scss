@@ -1,0 +1,57 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+
+//==========
+
+// Extra Small devices (landscape phones, 576px and down)
+@media (max-width: 576px) {
+
+	#s,
+	#t,
+	#c {
+		width: 200px !important;
+		height: 200px !important;
+	}
+
+	.boxHome {
+		padding: 0px !important;
+	}
+}
+
+// Small devices (tablets, 768px and down)
+@media (max-width: 768px) {
+
+	#s,
+	#t,
+	#c {
+		width: 200px !important;
+		height: 200px !important;
+	}
+}
+
+// Medium devices (desktops, 992px and down)
+@media (max-width: 992px) {}
+
+// Large devices (large desktops, 1200px and down)
+@media (max-width: 1200px) and (min-width: 768px) {
+
+	#s,
+	#t,
+	#c {
+		width: 400px !important;
+		height: 400px !important;
+	}
+}
