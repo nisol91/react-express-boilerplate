@@ -1,52 +1,44 @@
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
 
+
+//super extra small
+@media (min-width: 300px) {
+
+	#s,
+	#t,
+	#c {
+		width: 250px !important;
+		height: 250px !important;
+	}
+}
+
+// Extra Small devices (landscape phones, 576px and up)
+@media (min-width: 450px) {
+
+	#s,
+	#t,
+	#c {
+		width: 250px !important;
+		height: 250px !important;
+	}
+}
+
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+
+	#s,
+	#t,
+	#c {
+		width: 300px !important;
+		height: 300px !important;
+	}
+
+
+}
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}
-
-
-//==========
-
-// Extra Small devices (landscape phones, 576px and down)
-@media (max-width: 576px) {
-
-	#s,
-	#t,
-	#c {
-		width: 200px !important;
-		height: 200px !important;
-	}
-
-	.boxHome {
-		padding: 0px !important;
-	}
-}
-
-// Small devices (tablets, 768px and down)
-@media (max-width: 768px) {
-
-	#s,
-	#t,
-	#c {
-		width: 200px !important;
-		height: 200px !important;
-	}
-}
-
-// Medium devices (desktops, 992px and down)
-@media (max-width: 992px) {}
-
-// Large devices (large desktops, 1200px and down)
-@media (max-width: 1200px) and (min-width: 768px) {
+@media (min-width: 768px) {
 
 	#s,
 	#t,
@@ -55,3 +47,106 @@
 		height: 400px !important;
 	}
 }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1300px) {
+
+	#s,
+	#t,
+	#c {
+		width: 500px !important;
+		height: 500px !important;
+	}
+}
+
+@media (min-width: 1400px) {
+
+	#s,
+	#t,
+	#c {
+		width: 700px !important;
+		height: 700px !important;
+	}
+}
+
+
+//==========
+
+//Super extra small
+@media (max-width: 450px) {
+	.contact2 {
+		font-size: 35px !important;
+	}
+
+	.navCont {
+		width: 10px !important;
+	}
+
+}
+
+// Extra Small devices (landscape phones, 576px and down)
+@media (max-width: 576px) {
+
+	.myBarsCont {
+		opacity: 1 !important;
+
+		.myBars {
+			width: 40px !important;
+			height: 40px !important;
+		}
+	}
+
+	.mynavbar {
+		transform: translateX(-150px) !important;
+		opacity: .95;
+	}
+
+
+	.home1 {
+		font-size: 50px !important;
+	}
+
+	.home2 {
+		font-size: 40px !important;
+	}
+
+	.home3 {
+		font-size: 20px !important;
+	}
+
+	.Toastify__toast--default {
+		width: 50% !important;
+		height: 20px !important;
+	}
+
+	.Toastify__toast {
+		font-size: 10px !important;
+	}
+
+}
+
+// Small devices (tablets, 768px and down)
+@media (max-width: 768px) {
+
+	.boxHome,
+	.boxSkills {
+		padding: 40px !important;
+	}
+
+
+}
+
+// Medium devices (desktops, 992px and down)
+@media (max-width: 992px) {
+
+	.boxHome,
+	.boxSkills {
+		display: block !important;
+	}
+}
+
+// Large devices (large desktops, 1200px and down)
+@media (max-width: 1200px) and (min-width: 768px) {}

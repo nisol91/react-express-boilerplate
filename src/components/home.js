@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Sphere from "./sphere";
+import { Link } from "react-router-dom";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -29,8 +31,17 @@ export default class Portfolio extends Component {
     // }
     return (
       <div className="boxHome">
-        <h1 className="home1 text-flicker-in-glow">Hey</h1>
-        <h1 className="home2 tracking-in-expand">We are Downhill Studios</h1>
+        <div>
+          <h1 className="home1 text-flicker-in-glow">Hey</h1>
+          <h1 className="home2 tracking-in-expand">We are Downhill Studios</h1>
+          <h1 className="home3 swing-in-top-fwd">
+            We really enjoy making beautiful websites, ecommerce and apps
+          </h1>
+          <Link to={"/contact-me"} className="mylink">
+            <div className="myBtnContact swing-in-top-fwd">Contact Us</div>
+          </Link>
+        </div>
+
         <div className={`fade-in ${this.state.cubeVisibility && "visible"}`}>
           <Sphere></Sphere>
           <div>

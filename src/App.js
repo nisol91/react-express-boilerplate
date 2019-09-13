@@ -9,12 +9,18 @@ import Skills from "./components/skills/skills";
 import Navbar from "./components/navbar";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
   render() {
     return (
       <Router>
         <div className="contenitore">
           <Navbar></Navbar>
-          <div className="main">
+          <div className="main" onClick={this.hideNav}>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/skills" component={Skills} />
