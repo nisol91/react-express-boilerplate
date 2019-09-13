@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faBars } from "@fortawesome/free-solid-svg-icons";
@@ -32,8 +33,6 @@ export default class Navbar extends Component {
     this.showNav = this.showNav.bind(this);
   }
   showNav() {
-    console.log("ok");
-
     this.setState({
       navShowedMedia: !this.state.navShowedMedia
     });

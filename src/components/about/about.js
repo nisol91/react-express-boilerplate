@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Triangle from "./triangle";
+import Triangle from "../triangle";
 
 export default class About extends Component {
   constructor(props) {
@@ -20,7 +20,16 @@ export default class About extends Component {
   render() {
     return (
       <div style={{ marginTop: 10 }}>
-        about
+        <div className="skillssx">
+          <h1 className="about1 text-flicker-in-glow">The aboutet</h1>
+          <h1 className="about2 tracking-in-expand">good at:</h1>
+          <h1 className="about3 swing-in-top-fwd">JavaScript, Html, Css</h1>
+          <h1 className="about2 tracking-in-expand">the stack:</h1>
+
+          <h1 className="skills3 swing-in-top-fwd">
+            React, ReactNative, NodeJs, MongoDB
+          </h1>
+        </div>
         <div className={`fade-in ${this.state.cubeVisibility && "visible"}`}>
           <Triangle></Triangle>
         </div>

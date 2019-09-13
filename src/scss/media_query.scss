@@ -181,6 +181,9 @@
 
 // Medium devices (desktops, 992px and down)
 @media (max-width: 992px) {
+	.close-container {
+		display: none !important;
+	}
 
 	.skills1,
 	.skills2,

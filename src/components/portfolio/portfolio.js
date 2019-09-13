@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Card from "./card/card";
+import Card from "../card/card";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import "./portfolio.scss";
 
 export default class Portfolio extends Component {
   constructor(props) {
@@ -80,7 +81,7 @@ export default class Portfolio extends Component {
             className={`textPortfolio slide-in-tr ${this.state
               .projectsVisibility && "visible"}`}
           >
-            <h1 className="port1">This is our work</h1>
+            <h1 className="port1">This is the work</h1>
             <h1 className="port2">Check it out</h1>
           </div>
           <div

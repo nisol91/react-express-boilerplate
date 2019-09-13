@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Portfolio from "./components/portfolio";
-import Home from "./components/home";
+import Portfolio from "./components/portfolio/portfolio";
+import Home from "./components/home/home";
 import Contact from "./components/contact/contact";
-import About from "./components/about";
+import About from "./components/about/about";
 import Skills from "./components/skills/skills";
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar/navbar";
 
 class App extends Component {
   constructor(props) {

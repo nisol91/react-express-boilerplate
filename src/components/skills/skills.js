@@ -28,10 +28,10 @@ export default class Skills extends Component {
     return (
       <div className="boxSkills">
         <div className="skillssx">
-          <h1 className="skills1 text-flicker-in-glow">Our skillset</h1>
-          <h1 className="skills2 tracking-in-expand">we are good at:</h1>
+          <h1 className="skills1 text-flicker-in-glow">The skillset</h1>
+          <h1 className="skills2 tracking-in-expand">good at:</h1>
           <h1 className="skills3 swing-in-top-fwd">JavaScript, Html, Css</h1>
-          <h1 className="skills2 tracking-in-expand">our stack:</h1>
+          <h1 className="skills2 tracking-in-expand">the stack:</h1>
 
           <h1 className="skills3 swing-in-top-fwd">
             React, ReactNative, NodeJs, MongoDB
