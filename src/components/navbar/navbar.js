@@ -10,12 +10,12 @@ import {
   faTwitter
 } from "@fortawesome/free-brands-svg-icons";
 
-import logo from "../img/logo_2.png";
-import home from "../img/chinese-house.svg";
-import portfolio from "../img/view.svg";
-import contact from "../img/letter.svg";
-import skills from "../img/settings.svg";
-import about from "../img/lego.svg";
+import logo from "../../img/logo_2.png";
+import home from "../../img/chinese-house.svg";
+import portfolio from "../../img/view.svg";
+import contact from "../../img/letter.svg";
+import skills from "../../img/settings.svg";
+import about from "../../img/lego.svg";
 
 import i18n from "../../i18n";
 import { withNamespaces } from "react-i18next";
@@ -42,7 +42,6 @@ class Navbar extends Component {
         navShowedMedia: !this.state.navShowedMedia
       });
     }
-    console.log(this.state.windowWidth);
   }
   closeNav() {
     this.setState({ navSlide: true });
