@@ -17,14 +17,18 @@ import contact from "../img/letter.svg";
 import skills from "../img/settings.svg";
 import about from "../img/lego.svg";
 
-export default class Navbar extends Component {
+import i18n from "../../i18n";
+import { withNamespaces } from "react-i18next";
+
+class Navbar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       navSlide: false,
       showOverlay: false,
-      navShowedMedia: false
+      navShowedMedia: false,
+      windowWidth: window.innerWidth
     };
     this.closeNav = this.closeNav.bind(this);
     this.openNav = this.openNav.bind(this);
@@ -33,9 +37,12 @@ export default class Navbar extends Component {
     this.showNav = this.showNav.bind(this);
   }
   showNav() {
-    this.setState({
-      navShowedMedia: !this.state.navShowedMedia
-    });
+    if (this.state.windowWidth < 1000) {
+      this.setState({
+        navShowedMedia: !this.state.navShowedMedia
+      });
+    }
+    console.log(this.state.windowWidth);
   }
   closeNav() {
     this.setState({ navSlide: true });
@@ -69,6 +76,11 @@ export default class Navbar extends Component {
     } else if (this.state.hiddenOverlay) {
       className_3 = "overlay1";
     }
+
+    //i18n
+    const changeLanguage = lng => {
+      i18n.changeLanguage(lng);
+    };
     return (
       <div className="navCont">
         <div className="myBarsCont">
@@ -82,7 +94,7 @@ export default class Navbar extends Component {
           className={`${className_1} ${this.state.navShowedMedia &&
             "navbarShowedMedia"}`}
         >
-          <Link to={"/"} className="mylink">
+          <Link to={"/"} className="mylink myLogoLink">
             <img
               className={`myLogo ${this.state.navSlide && "hidden"}`}
               src={logo}
@@ -141,7 +153,7 @@ export default class Navbar extends Component {
             />
           </Link>
           <Link to={"/contact-me"} className="mylink" onClick={this.showNav}>
-            <h1 className={className_2}>Contact Me</h1>
+            <h1 className={className_2}>Contacts</h1>
             <img
               className={`homeIcon contIcon ${this.state.navSlide &&
                 "show_icon"}`}
@@ -162,10 +174,17 @@ export default class Navbar extends Component {
           </div>
           <div className={`lang ${this.state.navSlide && "hidden"}`}>
             {/* <h1 className="langSelect">IT</h1> */}
-            <h1 className="langSelect">EN</h1>
+            {/* <h1 className="langSelect">EN</h1> */}
+            <h1 className="langSelect" onClick={() => changeLanguage("it")}>
+              IT
+            </h1>
+            <h1 className="langSelect" onClick={() => changeLanguage("en")}>
+              EN
+            </h1>
           </div>
         </div>
       </div>
     );
   }
 }
+export default withNamespaces()(Navbar);

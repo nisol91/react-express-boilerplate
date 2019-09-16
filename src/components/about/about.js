@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Triangle from "../triangle";
 import "./about.scss";
+import { translate } from "react-i18next";
 
-export default class About extends Component {
+class About extends Component {
   constructor(props) {
     super(props);
 
@@ -19,9 +20,12 @@ export default class About extends Component {
     }, 1500);
   }
   render() {
+    const { t } = this.props;
     return (
       <div style={{ marginTop: 10 }}>
         <div className="aboutcontainer">
+          <h1>{t("Welcome to React")}</h1>
+
           <h1 className="about1 text-flicker-in-glow">About the studio</h1>
           <h1 className="about2 tracking-in-expand">good at:</h1>
           <h1 className="about3 swing-in-top-fwd">JavaScript, Html, Css</h1>
@@ -38,3 +42,4 @@ export default class About extends Component {
     );
   }
 }
+export default translate()(About);
