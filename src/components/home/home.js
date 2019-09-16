@@ -40,7 +40,7 @@ class Home extends Component {
           <h1 className="home2 tracking-in-expand">{t("this_is_downhill")}</h1>
           <h1 className="home3 swing-in-top-fwd">{t("what_we_love")}</h1>
           <Link to={"/contact-me"} className="mylink">
-            <div className="myBtnContact swing-in-top-fwd">Contact Us</div>
+            <div className="myBtnContact swing-in-top-fwd">{t("contacts")}</div>
           </Link>
         </div>
 

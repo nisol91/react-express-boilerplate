@@ -86,7 +86,7 @@ export default class Contact extends Component {
               </Alert>
             )}
           </div>
-          <h1 className="contact2 tracking-in-expand">Contact Us</h1>
+          <h1 className="contact2 tracking-in-expand">Contact form</h1>
 
           <div
             className={`bounce-in-top  ${this.state.formShowEnter &&
