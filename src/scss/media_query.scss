@@ -102,7 +102,7 @@
 @media (max-width: 576px) {
 	.progress {
 
-		margin-top: 80% !important;
+		margin-top: 300px !important;
 	}
 
 	.navCont {
@@ -139,19 +139,22 @@
 
 
 	.home1,
-	.skills1 {
+	.skills1,
+	.about1 {
 		font-size: 50px !important;
 	}
 
 	.home2,
-	.skills2 {
-		font-size: 35px !important;
+	.skills2,
+	.about2 {
+		font-size: 40px !important;
 
 	}
 
 	.home3,
-	.skills3 {
-		font-size: 20px !important;
+	.skills3,
+	.about3 {
+		font-size: 25px !important;
 	}
 
 	.Toastify__toast--default {
@@ -221,7 +224,8 @@
 
 
 	.boxHome,
-	.boxSkills {
+	.boxSkills,
+	.boxAbout {
 		display: block !important;
 	}
 }

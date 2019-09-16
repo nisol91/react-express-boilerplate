@@ -22,18 +22,11 @@ class About extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div style={{ marginTop: 10 }}>
+      <div className="boxAbout">
         <div className="aboutcontainer">
-          <h1>{t("Welcome to React")}</h1>
-
-          <h1 className="about1 text-flicker-in-glow">About the studio</h1>
-          <h1 className="about2 tracking-in-expand">good at:</h1>
-          <h1 className="about3 swing-in-top-fwd">JavaScript, Html, Css</h1>
-          <h1 className="about2 tracking-in-expand">the stack:</h1>
-
-          <h1 className="skills3 swing-in-top-fwd">
-            React, ReactNative, NodeJs, MongoDB
-          </h1>
+          <h1 className="about1 text-flicker-in-glow">{t("about_studio")}</h1>
+          {/* <h1 className="about2 tracking-in-expand">good at:</h1> */}
+          <h1 className="about3 swing-in-top-fwd">{t("studio_story")}</h1>
         </div>
         <div className={`fade-in ${this.state.cubeVisibility && "visible"}`}>
           <Triangle></Triangle>

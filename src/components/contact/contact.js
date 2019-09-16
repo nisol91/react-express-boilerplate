@@ -3,6 +3,7 @@ import axios from "axios";
 import { Spinner, Alert } from "reactstrap";
 import "./contact.scss";
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import { translate } from "react-i18next";
 
 const API_PATH = "http://localhost:4040/form/add";
 const Map = ReactMapboxGl({
@@ -10,7 +11,7 @@ const Map = ReactMapboxGl({
     "pk.eyJ1Ijoibmlzb2w5MSIsImEiOiJjazBjaWRvbTIwMWpmM2hvMDhlYWhhZGV0In0.wyRaVw6FXdw6g3wp3t9FNQ"
 });
 
-export default class Contact extends Component {
+class Contact extends Component {
   constructor(props) {
     super(props);
 
@@ -62,6 +63,8 @@ export default class Contact extends Component {
   }
   componentDidMount() {}
   render() {
+    const { t } = this.props;
+
     return (
       <div style={{ marginTop: 10 }}>
         {this.state.formVisibility === false && (
@@ -71,7 +74,7 @@ export default class Contact extends Component {
               className={`App contactSpinner ${!this.state.formVisibility &&
                 "showed"}`}
             />
-            <h1>sending...</h1>
+            <h1>{t("sending")}</h1>
           </div>
         )}
         <div className={`App ${this.state.formVisibility && "showed"}`}>
@@ -82,11 +85,11 @@ export default class Contact extends Component {
                 isOpen={this.state.visible}
                 toggle={this.onDismiss}
               >
-                Message sent successfully
+                {t("msg_sent")}
               </Alert>
             )}
           </div>
-          <h1 className="contact2 tracking-in-expand">Contact form</h1>
+          <h1 className="contact2 tracking-in-expand">{t("contact_form")}</h1>
 
           <div
             className={`bounce-in-top  ${this.state.formShowEnter &&
@@ -156,3 +159,4 @@ export default class Contact extends Component {
     );
   }
 }
+export default translate()(Contact);

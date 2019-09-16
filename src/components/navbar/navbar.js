@@ -81,6 +81,8 @@ class Navbar extends Component {
     const changeLanguage = lng => {
       i18n.changeLanguage(lng);
     };
+    const { t } = this.props;
+
     return (
       <div className="navCont">
         <div className="myBarsCont">
@@ -153,7 +155,7 @@ class Navbar extends Component {
             />
           </Link>
           <Link to={"/contact-me"} className="mylink" onClick={this.showNav}>
-            <h1 className={className_2}>Contacts</h1>
+            <h1 className={className_2}>{t("contacts_nav")}</h1>
             <img
               className={`homeIcon contIcon ${this.state.navSlide &&
                 "show_icon"}`}

@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./scss/index.scss";
 import App from "./App";
-// import "./i18n";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+// import "./i18n";
 
 ReactDOM.render(
   <BrowserRouter>

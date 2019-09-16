@@ -3,8 +3,9 @@ import axios from "axios";
 import Card from "../card/card";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "./portfolio.scss";
+import { translate } from "react-i18next";
 
-export default class Portfolio extends Component {
+class Portfolio extends Component {
   constructor(props) {
     super(props);
 
@@ -67,6 +68,7 @@ export default class Portfolio extends Component {
     //   className_2 += " ";
     // }
     //
+    const { t } = this.props;
 
     return (
       <div className={`fade-in ${this.state.barDidMount && "visible"}`}>
@@ -81,7 +83,7 @@ export default class Portfolio extends Component {
             className={`textPortfolio slide-in-tr ${this.state
               .projectsVisibility && "visible"}`}
           >
-            <h1 className="port1">This is the work</h1>
+            <h1 className="port1">{t("the_work")}</h1>
             <h1 className="port2">Check it out</h1>
           </div>
           <div
@@ -103,3 +105,4 @@ export default class Portfolio extends Component {
     );
   }
 }
+export default translate()(Portfolio);
