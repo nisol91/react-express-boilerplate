@@ -5,8 +5,9 @@ import "./home.scss";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { translate } from "react-i18next";
 
-export default class Portfolio extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -30,14 +31,14 @@ export default class Portfolio extends Component {
     // if (this.state.slide) {
     //   className_1 += " ";
     // }
+    const { t } = this.props;
+
     return (
       <div className="boxHome">
         <div>
           <h1 className="home1 text-flicker-in-glow">Hey</h1>
-          <h1 className="home2 tracking-in-expand">This is Downhill Studios</h1>
-          <h1 className="home3 swing-in-top-fwd">
-            Really enjoy making beautiful websites, ecommerce and apps
-          </h1>
+          <h1 className="home2 tracking-in-expand">{t("this_is_downhill")}</h1>
+          <h1 className="home3 swing-in-top-fwd">{t("what_we_love")}</h1>
           <Link to={"/contact-me"} className="mylink">
             <div className="myBtnContact swing-in-top-fwd">Contact Us</div>
           </Link>
@@ -53,3 +54,5 @@ export default class Portfolio extends Component {
     );
   }
 }
+
+export default translate()(Home);
