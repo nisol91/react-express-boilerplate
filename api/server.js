@@ -70,7 +70,7 @@
 //   console.log("Server is running on Port:", PORT);
 // });
 
-//=======================
+//=======================altro modo per mongodb atlas cloud
 
 const mongoose = require("mongoose");
 const express = require("express");
@@ -91,7 +91,8 @@ app.use(cors());
 
 // this is our MongoDB database
 const dbRoute =
-  "mongodb+srv://default-user:default_users_psw_010203@cluster0-dqmij.gcp.mongodb.net/portfolio?retryWrites=true&w=majority";
+  // "mongodb+srv://default-user:default_users_psw_010203@cluster0-dqmij.gcp.mongodb.net/portfolio?retryWrites=true&w=majority";
+  "mongodb+srv://default-user:default_users_psw_010203@cluster0-dqmij.gcp.mongodb.net/portfolio";
 
 // connects our back end code with the database
 mongoose.connect(dbRoute, { useNewUrlParser: true });
