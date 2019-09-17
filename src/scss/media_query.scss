@@ -2,6 +2,22 @@
 // No media query since this is the default in Bootstrap
 
 
+//height
+@media (max-height: 800px) {
+
+
+	.main,
+		{
+		overflow-y: scroll !important;
+	}
+
+	.mynavbar {
+		// height: auto !important;
+		overflow-y: scroll !important;
+
+	}
+}
+
 //super extra small
 @media (min-width: 300px) {
 
