@@ -91,7 +91,7 @@ app.use(cors());
 
 // this is our MongoDB database
 const dbRoute =
-  "mongodb+srv://default-user:default_users_psw_010203@cluster0-dqmij.gcp.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://default-user:default_users_psw_010203@cluster0-dqmij.gcp.mongodb.net/portfolio?retryWrites=true&w=majority";
 
 // connects our back end code with the database
 mongoose.connect(dbRoute, { useNewUrlParser: true });
