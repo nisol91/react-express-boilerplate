@@ -6,19 +6,12 @@
 @media (max-height: 800px) {
 
 
-	.main,
-		{
+	.main {
 		overflow-y: scroll !important;
-	}
-
-	.mynavbar {
-		// height: auto !important;
-		overflow-y: scroll !important;
-
 	}
 
 	.mylink {
-		margin-top: 5px !important;
+		margin-top: 10px !important;
 	}
 
 	.socialIcons {
