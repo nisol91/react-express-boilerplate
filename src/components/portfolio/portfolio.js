@@ -20,7 +20,7 @@ class Portfolio extends Component {
   }
   getProjects() {
     axios
-      .get("http://localhost:4040/project")
+      .get(`${process.env.REACT_APP_GET_PROJECTS}`)
       .then(response => {
         this.setState({ project: response.data });
       })
