@@ -20,7 +20,9 @@ class Portfolio extends Component {
   }
   getProjects() {
     axios
-      .get(`${process.env.REACT_APP_GET_PROJECTS}`)
+      // .get(`${process.env.REACT_APP_GET_PROJECTS}`)
+      .get("https://nicola-portfolio-api-2.herokuapp.com/project")
+
       .then(response => {
         this.setState({ project: response.data });
       })
