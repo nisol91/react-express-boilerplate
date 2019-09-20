@@ -14,7 +14,12 @@ export default class Card extends Component {
     this.handleImageLoaded = this.handleImageLoaded.bind(this);
   }
   handleImageLoaded() {
-    this.setState({ imageLoaded: true });
+    setTimeout(() => {
+      this.setState({
+        imageLoaded: true
+      });
+      console.log(this.state.imageLoaded);
+    }, 0);
   }
   componentDidMount() {}
 
