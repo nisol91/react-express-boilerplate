@@ -34,6 +34,7 @@ class Portfolio extends Component {
       this.setState({
         projectsVisibility: true
       });
+      console.log(this.state.project);
     }, 3000);
   }
   animation() {
