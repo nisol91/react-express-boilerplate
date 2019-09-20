@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./card.scss";
 import { Link } from "react-router-dom";
+import { Spinner } from "reactstrap";
 
 export default class Card extends Component {
   constructor(props) {
@@ -8,12 +9,12 @@ export default class Card extends Component {
 
     this.state = {
       image: null,
-      imageStatus: "loading"
+      imageLoaded: false
     };
     this.handleImageLoaded = this.handleImageLoaded.bind(this);
   }
   handleImageLoaded() {
-    this.setState({ imageStatus: "loaded" });
+    this.setState({ imageLoaded: true });
   }
   componentDidMount() {}
 
@@ -26,12 +27,14 @@ export default class Card extends Component {
               <h1 className="showText textCardColor">SHOW ME</h1>
             </div>
           </Link>
+          {!this.state.imageLoaded && (
+            <Spinner color="primary" className="imgSpinner" />
+          )}
           <img
             src={this.props.datiPerCard.project_img}
             alt=""
             onLoad={this.handleImageLoaded}
           />
-          {this.state.imageStatus}
         </div>
         {/* <h1 className="cardFont">{this.props.datiPerCard.project_name}</h1> */}
         {/* <h1 className="cardFont">{this.props.datiPerCard.project_date}</h1> */}

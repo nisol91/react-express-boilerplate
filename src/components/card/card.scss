@@ -11,6 +11,12 @@ $card-height: 200px;
 	overflow: hidden;
 	position: relative;
 
+	.imgSpinner {
+		position: absolute;
+		top: 45%;
+		left: 45%;
+	}
+
 	.imgContainer {
 		img {
 			opacity: .5;
