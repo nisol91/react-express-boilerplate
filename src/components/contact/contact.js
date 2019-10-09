@@ -154,7 +154,6 @@ class Contact extends Component {
             </Layer>
           </Map>
         )}
-        ;
       </div>
     );
   }

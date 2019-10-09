@@ -4,7 +4,9 @@
 
 //height
 @media (max-height: 800px) {
-
+	.Toastify__toast-container--top-right {
+		top: 0em !important;
+	}
 
 	.main {
 		overflow-y: scroll !important;
