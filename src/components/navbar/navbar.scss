@@ -52,11 +52,11 @@
 	.homeIcon {
 		color: $link-color;
 		opacity: 0;
-		height: 40px;
-		width: 40px;
+		height: 30px;
+		width: 30px;
 		position: absolute;
 		top: -5px;
-		left: 0px;
+		left: 7px;
 		z-index: 1;
 		transition: opacity 0.4s ease-in;
 		display: flex;
@@ -95,16 +95,16 @@
 	}
 
 	.portIcon {
-		left: 10px;
+		left: 14px;
 	}
 
 	.aboutIcon {
-		left: 3px;
+		left: 6px;
 		top: -5px;
 	}
 
 	.contIcon {
-		left: 12px;
+		left: 15px;
 		top: -5px;
 	}
 
@@ -114,7 +114,7 @@
 	}
 
 	.skillsIcon {
-		left: -2px;
+		left: 3px;
 		top: -5px;
 	}
 

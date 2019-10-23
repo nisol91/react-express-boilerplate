@@ -4,6 +4,9 @@ import Card from "../card/card";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "./portfolio.scss";
 import { translate } from "react-i18next";
+import expressLogo from "../../img/express.png";
+import mongodbLogo from "../../img/mongodb.png";
+import reactLogo from "../../img/react.svg";
 
 class Portfolio extends Component {
   constructor(props) {
@@ -88,6 +91,18 @@ class Portfolio extends Component {
           >
             <h1 className="port1">{t("the_work")}</h1>
             <h1 className="port2">Check it out</h1>
+            <h3 className="port3">
+              And visit my
+              <a href="https://github.com/nisol91?tab=repositories"> GitHub </a>
+              page
+            </h3>
+
+            <h3 className="port4">This webapp was made with:</h3>
+            <div className="logportBox">
+              <img class="logosPortfolio" src={reactLogo} alt="" />
+              <img class="logosPortfolio" src={mongodbLogo} alt="" />
+              <img class="logosPortfolio" src={expressLogo} alt="" />
+            </div>
           </div>
           <div
             className={`works fade-in ${this.state.projectsVisibility &&

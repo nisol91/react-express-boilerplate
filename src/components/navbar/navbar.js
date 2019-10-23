@@ -5,9 +5,10 @@ import "./navbar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faBars } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook,
-  faInstagram,
-  faTwitter
+  // faFacebook,
+  // faInstagram,
+  // faTwitter,
+  faGithub
 } from "@fortawesome/free-brands-svg-icons";
 
 import logo from "../../img/logo_2.png";
@@ -163,7 +164,10 @@ class Navbar extends Component {
             />
           </Link>
           <div className={`socialIcons ${this.state.navSlide && "hidden"}`}>
-            <a href="/">
+            <a href="https://github.com/nisol91?tab=repositories">
+              <FontAwesomeIcon icon={faGithub} className="mysocialicon" />
+            </a>
+            {/* <a href="/">
               <FontAwesomeIcon icon={faFacebook} className="mysocialicon" />
             </a>
             <a href="/">
@@ -171,7 +175,7 @@ class Navbar extends Component {
             </a>
             <a href="/">
               <FontAwesomeIcon icon={faTwitter} className="mysocialicon" />
-            </a>
+            </a> */}
           </div>
           <div className={`lang ${this.state.navSlide && "hidden"}`}>
             {/* <h1 className="langSelect">IT</h1> */}
